@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 class ModelTests(TestCase):
 
     def test_create_user_with_email_successful(self):
-        email = 'hello@luizagarofalo.com'
+        email = 'hi@adalovelace.com'
         password = 'test1234'
         user = get_user_model().objects.create_user(
             email=email,
@@ -16,7 +16,7 @@ class ModelTests(TestCase):
         self.assertTrue(user.check_password(password))
 
     def test_new_user_email_normalized(self):
-        email = 'hello@LUIZAGAROFALO.com'
+        email = 'hi@ADALOVELACE.com'
         user = get_user_model().objects.create_user(email, 'test1234')
 
         self.assertEqual(user.email, email.lower())
@@ -27,7 +27,7 @@ class ModelTests(TestCase):
 
     def test_create_new_super_user(self):
         user = get_user_model().objects.create_superuser(
-            'hello@luizagarofalo.com',
+            'hi@adalovelace.com',
             'test1234'
         )
 
